@@ -5,20 +5,14 @@ class UserRouter extends Router {
     init(){
        this.get('/', ['PUBLIC'],async (req,res)=>{
             try {
-                res.sendSuccess('Hola coder- get user')
-                
+                res.sendSuccess('Hola coder - get user')                
             } catch (error) {
                 res.sendServerError(error)
             }
        }) 
-       this.post('/current', ['ADMIN'],async (req,res)=>{
+       this.get('/currentUser', ['USER_PREMIUN'],async (req,res)=>{
             try {
-                let user = {
-                    email: 'email',
-                    role: 'user'
-                }
-                res.sendSuccess('Hola coder- post user')
-                
+                res.sendSuccess('Hola coder- get user')                
             } catch (error) {
                 res.sendServerError(error)
             }

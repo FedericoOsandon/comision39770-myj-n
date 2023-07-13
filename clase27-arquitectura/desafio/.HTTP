@@ -1,0 +1,27 @@
+GET http://localhost:8080/
+
+### POST USER
+GET http://localhost:8080/api/users
+
+###
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "nombre": "Federico",
+    "apellido": "f@gmail.com"
+}
+
+
+### POST TOYS
+GET http://localhost:8080/api/toys
+
+###
+POST http://localhost:8080/api/toys
+Content-Type: application/json
+
+{
+    "nombre": "Lego",
+    "precio": 15000,
+    "categoria": "jugetes"
+}

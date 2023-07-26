@@ -1,0 +1,5 @@
+GET http://localhost:8080/api/products/
+###
+GET http://localhost:8080/api/products/:pid
+###
+POST http://localhost:8080/api/products/

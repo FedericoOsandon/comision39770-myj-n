@@ -11,3 +11,5 @@ COPY . .
 EXPOSE 8080
 
 CMD ["npm", "start"]
+
+# docker build -t dockeroperations39770 .

@@ -1,0 +1,23 @@
+GET http://localhost:8080/ HTTP/1.1
+
+###
+POST http://localhost:8080/api/sessions/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "Federico",
+    "last_name": "Osandón",
+    "email": "f@gmail.com",
+    "password": "12346"
+}
+###
+POST http://localhost:8080/api/sessions/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "first_name": "Federico",
+    "last_name": "Osandón",
+    "email": "f@gmail.com",
+    "password": "12346"
+}
+

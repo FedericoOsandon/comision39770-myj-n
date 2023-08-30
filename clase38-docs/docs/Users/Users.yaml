@@ -25,19 +25,19 @@ paths:
       tags: 
         - Users
       parameters:
-      - name: uid
-        in: path
-        required: true
-        description: id del usuario que se debe solicitar
-        schema: 
-          $type: String
+        - name: uid
+          in: path
+          required: true
+          description: id del usuario que se debe solicitar
+          schema: 
+            $type: String
       responses:
         "200":
-        description: El usuario fué obtenido correctamente de la base de datos
-        content: 
-          application/json:
-            schema:
-              $ref: '#components/schema/User'
+          description: El usuario fué obtenido correctamente de la base de datos
+          content: 
+            application/json:
+              schema:
+                $ref: '#components/schema/User'
     put:
       summary: Se actualiza un usuario segun uid
       tags: 
@@ -48,7 +48,10 @@ paths:
         required: true
         description: El id del usuario
         schema: 
-          $type: string
+          type: string
+      responses:
+        "200":
+          description: El usuario fue actualizado correctamente
       requestBody: 
         required: true
         content:

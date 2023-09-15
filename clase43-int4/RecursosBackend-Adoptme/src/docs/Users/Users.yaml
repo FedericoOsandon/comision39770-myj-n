@@ -1,0 +1,76 @@
+paths: 
+  /api/users/:
+    get:
+      summary: Obtiene todos los usuarios
+      tags: 
+        - Users 
+      responses: 
+        "200":
+          desciption: 'Los usuarios fueron obtenidos correctamente' 
+          content: 
+            applications/json: 
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/components/schemas/Users'
+    post: 
+      summary: Crea un usuario nuevo
+      tags: 
+        - Users
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/bodyUser'
+      responses: 
+        "201": 
+          description: El usuario fue creado correctamente en la base de datos
+
+components:
+  schemas:
+    Users:
+      type: object
+      properties:
+        _id: 
+          type: string
+          description: Id autogenerado por mongo
+        first_name: 
+          type: string
+          description: Nombre del usuario
+        last_name: 
+          type: string
+          description: Apellido del usuario
+        email: 
+          type: string
+          description: Email del usuario
+        password: 
+          type: string
+          description: Password del usuario
+      example:
+        _id: ObjectId:('fasdf.asdf$adffdslf6')
+        first_name: Federico
+        last_name: Osandón
+        email: f@gmail.com
+        password: 123456
+  requestBodies:
+    bodyUser:
+      type: object
+      properties: 
+        first_name: 
+          type: string
+          description: Nombre del usuario
+        last_name: 
+          type: string
+          description: Apellido del usuario
+        email: 
+          type: string
+          description: Email del usuario
+        password: 
+          type: string
+          description: Password del usuario
+      example:
+        first_name: Federico
+        last_name: Osandón
+        email: o@gmail.com
+        password: fede123
